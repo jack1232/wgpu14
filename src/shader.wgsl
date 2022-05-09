@@ -1,6 +1,6 @@
 // vertex shader
 
-[[block]] struct Uniforms {   
+struct Uniforms {   
     model_mat : mat4x4<f32>;  
     view_project_mat : mat4x4<f32>;             
     normal_mat : mat4x4<f32>;            
@@ -33,13 +33,13 @@ fn vs_main(in: Input) -> Output {
 
 // fragment shader
 
-[[block]] struct FragUniforms {
+struct FragUniforms {
     light_position : vec4<f32>;   
     eye_position : vec4<f32>;
 };
 [[binding(1), group(0)]] var<uniform> frag_uniforms : FragUniforms;
 
-[[block]] struct LightUniforms {  
+struct LightUniforms {  
     specular_color : vec4<f32>;
     ambient_intensity: f32;
     diffuse_intensity :f32;
