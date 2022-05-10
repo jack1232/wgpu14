@@ -93,8 +93,8 @@ pub fn simple_surface_points(f: &dyn Fn(f32, f32) -> [f32; 3], xmin:f32, xmax:f3
         pts[i] = pt1;
     }
 
-    let ymin1 = ymin - aspect * (ymax - ymin);
-    let ymax1 = ymax + aspect * (ymax - ymin);
+    let ymin1 = ymin - (1.0 - aspect) * (ymax - ymin);
+    let ymax1 = ymax + (1.0 - aspect) * (ymax - ymin);
 
     for i in 0..nx {
         for j in 0..nz {

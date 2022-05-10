@@ -67,17 +67,6 @@ nx:usize, nz:usize, scale:f32, aspect:f32) -> Vec<Vertex> {
     data.to_vec()
 }
 
-/*pub fn create_vertices_param(f: &dyn Fn(f32, f32) -> [f32; 3], colormap_name: &str, umin:f32, umax:f32, vmin:f32, vmax:f32, 
-nu:usize, nv: usize, xmin:f32, xmax:f32, zmin:f32, zmax:f32, scale:f32, scaley:f32) -> Vec<Vertex> {
-    let(pos, normal, color, _uv, _uv1) = 
-        surface::parametric_surface_data(f, colormap_name, umin, umax, vmin, vmax, nu, nv, xmin, xmax, zmin, zmax, scale, scaley);
-    let mut data:Vec<Vertex> = Vec::with_capacity(pos.len());
-    for i in 0..pos.len() {
-        data.push(vertex(pos[i], normal[i], color[i]));
-    }
-    data.to_vec()
-}*/
-
 impl Vertex {
     const ATTRIBUTES: [wgpu::VertexAttribute; 3] = wgpu::vertex_attr_array![0=>Float32x4, 1=>Float32x4, 2=>Float32x4];
     fn desc<'a>() -> wgpu::VertexBufferLayout<'a> {
